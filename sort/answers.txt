@@ -1,0 +1,16 @@
+sort1 uses: Bubble Sort.
+
+How do you know?: Because: 1. At large (n) there is a big difference in time between the worst case and best case scenarios.
+                           2. In Worst case scenario the time increases by increasing (n), yet in the Best case scenario the
+                              increase in time is much larger than that of the worst case scenario when increasing (n) due to
+                              O(n^2) and Omega(n).
+
+sort2 uses: Merge Sort.
+
+How do you know?: Because: 1. Time elapsed for best case and worst case scenarios are similar.
+                           2. It has the lowest Average time between all of the three sort files.
+
+sort3 uses: Selection Sort.
+
+How do you know?: Because: 1. Time elapsed for best case and worst case scenarios are similar.
+                           2. Yet it has more running time than that of (sort2) file.
