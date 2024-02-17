@@ -1,0 +1,23 @@
+Times:
+
+10 simulations: 0m0.028s
+100 simulations: 0m0.032s
+1000 simulations: 0m0.036s
+10000 simulations: 0m0.116s
+100000 simulations: 0m0.946s
+1000000 simulations: 0m8.929s
+
+Questions:
+
+Which predictions, if any, proved incorrect as you increased the number of simulations?:
+    1. Brazil ranked first in the first 3 trials, but turned into the second place to switch with belgium which was in the second place for
+        the first 3 trials as well.
+    2. France was at the fourth rank with 10% of winning, but went to 7th place with 3% chance of winning.
+    3. England and Denmark had no chance of winning in the first trial then turned to have 2.8% chance of winning for England at the final
+        trial to be in the 9th rank, and 3.2% for denmark to be of the 8th rank.
+
+Suppose you're charged a fee for each second of compute time your program uses.
+After how many simulations would you call the predictions "good enough"?:
+    i think at N = 10000 is enough, because it brought out the winner exactly the same as (@N = 1000000)
+    and even though, the least propability of winning was for a different team than that at N = 1000000 but it won't differ much for the purpose of the
+    program, since we care for the winner in the first place, also there were no much differences between propabilities of winning for other countries.
