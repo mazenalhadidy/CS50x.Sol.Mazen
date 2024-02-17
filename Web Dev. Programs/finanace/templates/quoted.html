@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Stock Information
+{% endblock %}
+
+{% block main %}
+    <div class="section">
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Price</th>
+                    <th>Symbol</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr>
+                    <td>{{ stockinfo["name"] }}</td>
+                    <td>{{ "{:.2f}".format(stockinfo["price"]) }}</td>
+                    <td>{{ stockinfo["symbol"] }}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+{% endblock %}

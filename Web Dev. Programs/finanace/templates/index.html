@@ -1,0 +1,38 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Dashboard
+{% endblock %}
+
+{% block main %}
+    <div class="section">
+        <table>
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Stocks</th>
+                    <th>Shares</th>
+                    <th>Current Price</th>
+                    <th>Total Value of Holding</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                {% for i in stockCount %}
+                <tr>
+                    <td>{{ i + 1 }}</td>
+                    <td>{{ current[i]["stocks"] }}</td>
+                    <td>{{ current[i]["shares"] }}</td>
+                    <td>{{ pricelist[i] }}</td>
+                    <td>{{ pricelist[i] * current[i]["shares"] }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    <div class="mb-3">
+        <h5>Current Balance: {{ currentbalance[0]["cash"] }}</h5>
+        <br>
+        <h5>Total Value of Stocks and Cash: {{ currentbalance[0]["cash"] + profit }}</h5>
+    </div>
+{% endblock %}

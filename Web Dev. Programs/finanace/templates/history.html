@@ -1,0 +1,34 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Transactions History
+{% endblock %}
+
+{% block main %}
+    <div class="section">
+        <table>
+            <thead>
+                <tr>
+                    <th>Record Number</th>
+                    <th>Stocks</th>
+                    <th>Shares</th>
+                    <th>Price</th>
+                    <th>Date</th>
+                    <th>Type</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                {% for transaction in transactions %}
+                <tr>
+                    <td>{{ transaction["Record"] }}</td>
+                    <td>{{ transaction["Stocks"] }}</td>
+                    <td>{{ transaction["Shares"] }}</td>
+                    <td>{{ transaction["Price"] }}</td>
+                    <td>{{ transaction["Date"] }}</td>
+                    <td>{{ transaction["Type"] }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+{% endblock %}
