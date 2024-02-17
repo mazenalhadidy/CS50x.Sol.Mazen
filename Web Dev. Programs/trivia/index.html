@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+    <head>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+        <link href="styles.css" rel="stylesheet">
+        <title>Trivia!</title>
+        <script>
+            // TODO: Add code to check answers to questions
+            document.addEventListener('DOMContentLoaded', function() {
+                let buttonid = ['1', '2', '3', '4', '5', '6'];
+                let text1 = document.createTextNode('Incorrect');
+                let text2 = document.createTextNode('Correct!');
+                let parent = document.getElementById('check1');
+                let flag = 0;
+
+                for (let i = 0; i < 6; i++) {
+                    let buttonclick = document.getElementById(buttonid[i]);
+                    buttonclick.addEventListener('click', function(event) {
+                        if (i == 3) {
+                            if (flag == 0) {
+                                buttonclick.style.backgroundColor = 'green';
+                                parent.appendChild(text2, parent);
+                                flag = 1;
+                            }
+                        } else {
+                            if (flag == 0) {
+                                buttonclick.style.backgroundColor = 'red';
+                                parent.appendChild(text1, parent);
+                                flag = 1;
+                            }
+                        }
+                        event.preventDefault();
+                    });
+                }
+
+                document.querySelector('form').addEventListener('submit', function(event) {
+                    let text3 = document.createTextNode('Incorrect');
+                    let text4 = document.createTextNode('Correct!');
+                    let anstext = document.getElementById('answer').value;
+                    let parent2 = document.getElementById('check2');
+                    if (anstext == 'nile' | anstext == 'Nile') {
+                        document.getElementById('answer').style.backgroundColor = 'green';
+                        parent2.appendChild(text4, parent2);
+                    } else {
+                        document.getElementById('answer').style.backgroundColor = 'red';
+                        parent2.appendChild(text3, parent2);
+                    }
+                    document.getElementById('answer').setAttribute('readonly', true);
+                    event.preventDefault();
+                });
+            });
+        </script>
+    </head>
+
+    <body>
+        <div class="header">
+            <h1>Trivia!</h1>
+        </div>
+
+        <div class="container">
+            <div class="section">
+                <h2>Part 1: Multiple Choice </h2>
+                <hr>
+                <!-- TODO: Add multiple choice question here -->
+                <h3 id="q1">How much time needed for the light to travel from the sun to earth?</h3>
+                <h4 id="check1"></h4>
+                <button id="1" type="click">5 minutes</button>
+                <button id="2" type="click">6 minutes</button>
+                <button id="3" type="click">7 minutes</button>
+                <button id="4" type="click">8 minutes</button>
+                <button id="5" type="click">9 minutes</button>
+                <button id="6" type="click">10 minutes</button>
+            </div>
+
+            <div class="section">
+                <h2>Part 2: Free Response</h2>
+                <hr>
+                <!-- TODO: Add free response question here -->
+                <h3 id="q2">What is the name of the longest river in the world?</h3>
+                <h4 id="check2"></h4>
+                <form>
+                    The
+                    <input autocomplete="off" autofocus id="answer" type="text">
+                    River
+                    <button type="submit">Submit</button>
+                </form>
+            </div>
+        </div>
+    </body>
+
+</html>
